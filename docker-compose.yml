@@ -16,7 +16,7 @@ services:
             - MYSQL_ROOT_PASSWORD=password
             - MYSQL_DATABASE=wpdb
         volumes:
-            - digitalNomadDb:/var/lib/mysql
+            - nomadMapDb:/var/lib/mysql
 
 volumes:
-    digitalNomadDb:
+    nomadMapDb:
