@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+    wp:
+        image: wordpress:php7.1
+        environment:
+            - WORDPRESS_DB_PASSWORD=password
+        ports:
+            - '8080:80'
+        volumes:
+            - ./theme:/var/www/html/wp-content/themes/digital-nomad
+
+    mysql:
+        image: mariadb:latest
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+            - MYSQL_DATABASE=wpdb
+        volumes:
+            - digitalNomadDb:/var/lib/mysql
+
+volumes:
+    digitalNomadDb:
