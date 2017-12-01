@@ -9,6 +9,7 @@ services:
             - '8080:80'
         volumes:
             - ./src:/var/www/html/wp-content/plugins/nomad-map
+            - wpNomadMap:/var/www/html
 
     mysql:
         image: mariadb:latest
@@ -20,3 +21,4 @@ services:
 
 volumes:
     nomadMapDb:
+    wpNomadMap:
